@@ -2,7 +2,6 @@
   #container
     Description(:data='tools')
     .cards
-      Card
 </template>
 
 <script>
