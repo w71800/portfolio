@@ -2,7 +2,12 @@
   #container
     Description(:data='hahow')
     .cards
-      Card
+      Card 
+      Card 
+      Card 
+      Card 
+      Card 
+      Card 
 </template>
 
 <script>
@@ -16,6 +21,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='sass'>
+  // #card
+  //   margin-right: 30px
 </style>
