@@ -1,6 +1,8 @@
 <template lang='pug'>
   #container
     Description(:data='hahow')
+    .cards
+      Card
 </template>
 
 <script>
