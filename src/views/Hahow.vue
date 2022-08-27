@@ -22,6 +22,6 @@ export default {
 </script>
 
 <style lang='sass'>
-  // #card
-  //   margin-right: 30px
+  @import '@/assets/style/_variables.sass'
+
 </style>

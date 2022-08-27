@@ -34,6 +34,7 @@ export default {
 
   // style of router-links
   a
+    // +showOutline($colorWhite)
     color: $colorWhite
     margin-right: 4rem
     cursor: pointer
@@ -41,10 +42,27 @@ export default {
     bottom: 0px
     left: 0
     padding: 3px 5px
+    &::before
+      position: absolute
+      bottom: -2px
+      left: 0
+      content: ''
+      display: block
+      opacity: 0
+      width: 0%
+      height: 0px
+      border: 1px solid $colorOrange
+      transition-duration: 0.3s
     &:last-child
       margin-right: 0
+  
+  // a 的互動效果
+  a  
     &:hover
       color: $colorOrange
-      bottom: 2px
-      left: 2px
+      // bottom: 2px
+      // left: 2px
+      &::before
+        opacity: 1
+        width: 100%
 </style>
