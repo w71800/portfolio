@@ -5,6 +5,7 @@ import Tools from '@/views/Tools'
 import Projects from '@/views/Projects'
 import description from '@/assets/data/description.json'
 
+// 要 props 入各路由的文本資料在這裡解構並且指派
 const { hahow, tools, projects } = description
 
 Vue.use(Router)
