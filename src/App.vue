@@ -13,6 +13,7 @@ import description from '@/assets/data/description.json/'
 import works from '@/assets/data/works.json/'
 
 export default {
+  // 放出資料給各個 view 元件去處理
   provide(){
     return { works }
   },
