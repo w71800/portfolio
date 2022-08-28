@@ -1,11 +1,12 @@
 <template lang='pug'>
   #footer
-    h1 {{ test2 }}
+    h1(v-for="work in works") {{ work.title }}
 </template>
 
 <script>
+
 export default {
-  inject: [ "test", "test2" ]
+  inject: [ 'works' ]
 }
 </script>
 
