@@ -1,22 +1,24 @@
 <template lang='pug'>
   #container
-    Description(:data='projects')
+    Description(:data='others')
     .cards
       Card(v-for='card in cardDatas' :keys='card.title' :datas='cardDatas')
 </template>
 
 <script>
+
 export default {
-  // 從路由那邊接來資料
   props: {
-    projects: {
+    // 傳參數
+    others: {
       type: Object,
     }
   },
-  inject: [ 'works' ],
+  inject: [ "works" ],
   computed: {
+    // 根據 type 篩選出要做出卡片的資料
     cardDatas(){
-      let r = this.works.filter( work => work.type == 'projects' )
+      let r = this.works.filter( work => work.type == 'others' )
 
       return r
     }
@@ -24,6 +26,7 @@ export default {
 }
 </script>
 
-<style lang='sass'>
+<style lang='sass' scoped>
+@import '@/assets/style/_variables.sass'
 
 </style>

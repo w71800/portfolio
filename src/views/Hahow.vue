@@ -2,7 +2,7 @@
   #container
     Description(:data='hahow')
     .cards
-      Card(v-for='data in cardData')
+      Card(v-for='card in cardDatas' :datas='cardDatas' :key='card.title')
 </template>
 
 <script>
@@ -17,8 +17,8 @@ export default {
   // 接入從 App provide 的 works 資料
   inject: [ "works" ],
   computed: {
-    // 根據 type 篩選出要做出卡片的資料
-    cardData(){
+    // 根據 type 篩選出要做出卡片的資料 cardDatas
+    cardDatas(){
       let r = this.works.filter( work => work.type == 'hahow')
 
       return r

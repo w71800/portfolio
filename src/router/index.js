@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Hahow from '@/views/Hahow'
 import Tools from '@/views/Tools'
 import Projects from '@/views/Projects'
+import Others from '@/views/Others'
 import description from '@/assets/data/description.json'
 
 // 要 props 入各路由的文本資料在這裡解構並且指派
-const { hahow, tools, projects } = description
+const { hahow, tools, projects, others } = description
 
 Vue.use(Router)
 
@@ -29,6 +30,12 @@ export default new Router({
       name: 'Projects',
       props: { projects },
       component: Projects
+    },
+    {
+      path: '/others',
+      name: 'Others',
+      props: { others },
+      component: Others
     }
   ]
 })

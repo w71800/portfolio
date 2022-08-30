@@ -1,4 +1,4 @@
-// 在這邊執行元件的註冊
+// 在這邊執行全域元件的註冊
 // 為什麼是用 install？
 import Vue from 'vue'
 import Card from '@/base/Card.vue'

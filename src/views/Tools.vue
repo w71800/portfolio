@@ -2,7 +2,7 @@
   #container
     Description(:data='tools')
     .cards
-      Card(v-for='data in cardData')
+      Card(v-for='card in cardDatas' :keys='card.title' :datas='cardDatas')
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
   inject: [ "works" ],
   computed: {
     // 根據 type 篩選出要做出卡片的資料
-    cardData(){
+    cardDatas(){
       let r = this.works.filter( work => work.type == 'tools')
 
       return r
