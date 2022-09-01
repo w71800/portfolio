@@ -1,6 +1,6 @@
 <template lang='pug'>
   #card
-    img(:src='imgUrl')
+    .img(:style='{"backgroundImage": "url("+ imgUrl +")"}')
     .info
       .links
         .icon.site
@@ -31,7 +31,7 @@ export default {
 *
 
 #card
-  +showOutline()
+  border: 5px solid #888
   margin-right: 40px
   margin-bottom: 40px
   width: 220px
@@ -43,20 +43,23 @@ export default {
   transition: .5s .4s
   position: absolute
   width: 100%
-  height: 30%
+  height: 20%
   background-color: #444
   // info 的預設位置
-  bottom: -30%
+  bottom: -20%
   z-index: 100
 
 // 為什麼 img 預設位置怪怪的？
-img
+.img
   +showOutline()
   width: 100%
   height: 100%
   position: absolute
   top: 0
   transition: .3s
+  background-size: cover
+  background-position: 50% 50%
+  // object-fit: contain
 
 .cover
   width: 100%
@@ -119,8 +122,8 @@ img
   &:hover
     .info
       bottom: 0
-    img
-      transform: scale(1.1)
+    .img
+      // background-size: 110% 110%
     .cover
       display: block
       opacity: 0.6
