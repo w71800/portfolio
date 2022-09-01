@@ -1,16 +1,26 @@
 <template lang='pug'>
   #card
+    img(:src='imgUrl')
     .info
       .links
         .icon.site
-          a(href='https://www.google.com.tw/?client=safari')
-        .icon.github
-          a(href='https://www.google.com.tw/?client=safari')
+          a(:href='data.gitpagesUrl' target='_blank' )
+        .icon.github(v-if='data.githubUrl')
+          a(:href='data.githubUrl' target='_blank' )
+    .cover 
+      .title {{ data.title }}
 </template>
 
 <script>
+
 export default {
-  props: [ 'datas', ]
+  props: [ 'data', ],
+  computed: {
+    imgUrl(){
+      return require(`@/assets/images/${this.data.imgUrl}`)
+    },
+  }
+  
 
 }
 </script>
@@ -30,13 +40,43 @@ export default {
   overflow: hidden
 
 .info
-  transition-duration: 0.5s 
+  transition: .5s .4s
   position: absolute
   width: 100%
   height: 30%
-  background-color: rgba(#999,1)
+  background-color: #444
   // info 的預設位置
   bottom: -30%
+  z-index: 100
+
+// 為什麼 img 預設位置怪怪的？
+img
+  +showOutline()
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  transition: .3s
+
+.cover
+  width: 100%
+  height: 100%
+  background-color: #fff
+  opacity: 0
+  display: none
+  .title
+    width: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    font-weight: 900
+    transform: translate(-50%,-50%)
+    text-align: center
+    color: black
+    font-size: 22px
+    opacity: 1
+
+
 
 .links
   // +showOutline($colorWhite)
@@ -74,9 +114,15 @@ export default {
     width: 100%
     height: 100%
 
+// 互動效果
 #card
   &:hover
     .info
       bottom: 0
+    img
+      transform: scale(1.1)
+    .cover
+      display: block
+      opacity: 0.6
 
 </style>

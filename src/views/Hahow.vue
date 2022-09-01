@@ -2,7 +2,7 @@
   #container
     Description(:data='hahow')
     .cards
-      Card(v-for='card in cardDatas' :datas='cardDatas' :key='card.title')
+      Card(v-for='card in cardDatas' :data='card' :key='card.title')
 </template>
 
 <script>
