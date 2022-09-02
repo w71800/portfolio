@@ -5,7 +5,7 @@
       h1 威利的作品集
       hr
       h5 
-        span.orange Portlio 
+        span.orange Portfolio 
         span of IKA
 </template>
 
