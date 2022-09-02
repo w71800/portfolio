@@ -13,6 +13,7 @@ const { hahow, tools, projects, others } = description
 Vue.use(Router)
 
 export default new Router({
+  mode: "hash",
   routes: [
     {
       path: '/',
