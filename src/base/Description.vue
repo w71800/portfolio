@@ -24,6 +24,8 @@ export default {
 #description
   // +showOutline($colorOrange)
   padding: 2.5rem 1.5rem
+h1, p
+  color: rgba(#FFF,.9)
 h1
   font-size: 4rem
   margin-bottom: 1.5rem

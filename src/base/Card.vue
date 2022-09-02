@@ -8,7 +8,7 @@
         .icon.github(v-if='data.githubUrl')
           a(:href='data.githubUrl' target='_blank' )
     .cover 
-      .title {{ data.title }}
+    .title {{ data.title }}
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
 *
 
 #card
-  border: 5px solid #888
+  border: 5px solid rgba(#FFF,.8)
   margin-right: 40px
   margin-bottom: 40px
   width: 220px
@@ -40,11 +40,12 @@ export default {
   overflow: hidden
 
 .info
-  transition: .5s .4s
+  transition-duration: .5s
+  transition-delay: 0
   position: absolute
   width: 100%
   height: 20%
-  background-color: #444
+  background-color: #666
   // info 的預設位置
   bottom: -20%
   z-index: 100
@@ -57,27 +58,30 @@ export default {
   position: absolute
   top: 0
   transition: .3s
-  background-size: cover
+  background-size: 100% 100%
   background-position: 50% 50%
   // object-fit: contain
 
 .cover
   width: 100%
   height: 100%
-  background-color: #fff
+  background-color: #555
+  transition: .3s .3s
   opacity: 0
   display: none
-  .title
-    width: 100%
-    position: absolute
-    top: 50%
-    left: 50%
-    font-weight: 900
-    transform: translate(-50%,-50%)
-    text-align: center
-    color: black
-    font-size: 22px
-    opacity: 1
+
+.title
+  width: 100%
+  position: absolute
+  top: 50%
+  left: 50%
+  font-weight: bold
+  transform: translate(-50%,-50%)
+  text-align: center
+  transition: .3s
+  color: #FFF
+  font-size: 22px
+  opacity: 0
 
 
 
@@ -122,10 +126,14 @@ export default {
   &:hover
     .info
       bottom: 0
+      transition-delay: .3s
     .img
-      // background-size: 110% 110%
+      background-size: 110% 110%
     .cover
       display: block
       opacity: 0.6
+    .title
+      opacity: 1
+    .cover, .title
 
 </style>
