@@ -1,5 +1,5 @@
 <template lang='pug'>
-  #landing
+  #landing(:style='{ "backgroundImage": "url(" + imgUrl + ")" }')
     .filter
     .text
       h1 威利的作品集
@@ -11,7 +11,11 @@
 
 <script>
 export default {
-
+  computed: {
+    imgUrl(){
+      return require("@/assets/images/header.png")
+    }
+  }
 }
 </script>
 
@@ -23,7 +27,6 @@ export default {
 #landing
   // 53px 是 navbar 的高度，但我想要用直接動態取得該高度該怎麼做呢？
   height: calc(100vh - 53px)
-  background-image: url(~@/assets/images/header.png)
   background-size: cover
   background-position: center center
 
