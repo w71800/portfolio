@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Landing from '@/views/Landing'
 import Hahow from '@/views/Hahow'
 import Tools from '@/views/Tools'
 import Projects from '@/views/Projects'
@@ -13,6 +14,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'Hahow',
+      component: Landing,
+    },
     {
       path: '/hahow',
       name: 'Hahow',
