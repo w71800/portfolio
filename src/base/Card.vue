@@ -3,7 +3,7 @@
     .img(:style='{"backgroundImage": "url("+ imgUrl +")"}')
     .info
       .links
-        .icon.site
+        .icon.site(v-if='data.gitpagesUrl')
           a(:href='data.gitpagesUrl' target='_blank' )
         .icon.github(v-if='data.githubUrl')
           a(:href='data.githubUrl' target='_blank' )
