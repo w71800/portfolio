@@ -4,18 +4,26 @@
     .text
       svg.title
         text(x="50%" y="50%") 威利的作品集
-    hr
-    h5 
-      span.orange Portfolio 
-      span of IKA
+      //- hr
+      h5 
+        span.orange Portfolio 
+        span of IKA
 </template>
 
 <script>
+
 export default {
   computed: {
     imgUrl(){
       return require("@/assets/images/header.png")
     }
+  },
+  mounted() {
+    const textSvg = document.querySelector("svg")
+    const subtitle = document.querySelector("h5")
+    textSvg.addEventListener("animationend", e => {
+      subtitle.classList.add("show")
+    })
   }
 }
 </script>
@@ -51,39 +59,30 @@ export default {
   height: 100%
   background-color: rgba(#222,.7)
 
-
+.text
+  color: #FFF
+h5
+  opacity: 0
+  transition-duration: .4s
+  margin-top: -3.2rem
+  font-size: 24px
+  margin-left: 10px
+  span
+    &.orange
+      color: $colorOrange
 svg.title
-  width: 100%
-  // fill: #fff
+  width: 500px
   font-size: 5rem
-  font-weight: bold
+  font-weight: 500
   text-anchor: middle
   dominant-baseline: middle
   stroke: #fff
   stroke-width: 2
   // stroke-dasharray: 10% 10%
   animation: showText 3s 1 forwards
-.text
-  color: #FFF
-h1
-  font-size: 72px
-hr
-  position: absolute
-  right: 0
-  border: none
-  background-color: $colorOrange
-  height: 5px
-  margin: 0
-  width: 0rem
-  transition: .5s
-h5
-  margin-top: 1.3rem
-  font-size: 24px
-  span 
-    &.orange
-      color: $colorOrange
 
-h1:hover
-  &+hr
-    width: 13rem
+h5
+  &.show
+    opacity: 1
+    
 </style>
