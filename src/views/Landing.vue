@@ -2,11 +2,12 @@
   #landing(:style='{ "backgroundImage": "url(" + imgUrl + ")" }')
     .filter
     .text
-      h1 威利的作品集
-      hr
-      h5 
-        span.orange Portfolio 
-        span of IKA
+      svg.title
+        text(x="50%" y="50%") 威利的作品集
+    hr
+    h5 
+      span.orange Portfolio 
+      span of IKA
 </template>
 
 <script>
@@ -21,6 +22,17 @@ export default {
 
 <style lang='sass' scoped>
 @import src/assets/style/_variables.sass
+@keyframes showText
+  0%, 10%
+    fill: transparent
+    stroke-dasharray: 0% 100%
+  70%
+    stroke-dasharray: 100% 0%
+    stroke-opacity: 1
+    fill: transparent
+  100%
+    stroke-opacity: 1
+    fill: #fff
 
 *
 
@@ -39,6 +51,18 @@ export default {
   height: 100%
   background-color: rgba(#222,.7)
 
+
+svg.title
+  width: 100%
+  // fill: #fff
+  font-size: 5rem
+  font-weight: bold
+  text-anchor: middle
+  dominant-baseline: middle
+  stroke: #fff
+  stroke-width: 2
+  // stroke-dasharray: 10% 10%
+  animation: showText 3s 1 forwards
 .text
   color: #FFF
 h1
@@ -46,13 +70,20 @@ h1
 hr
   position: absolute
   right: 0
-  border: 2.5px solid $colorOrange
+  border: none
+  background-color: $colorOrange
+  height: 5px
   margin: 0
-  width: 13rem
+  width: 0rem
+  transition: .5s
 h5
   margin-top: 1.3rem
   font-size: 24px
   span 
     &.orange
       color: $colorOrange
+
+h1:hover
+  &+hr
+    width: 13rem
 </style>
